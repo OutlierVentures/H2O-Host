@@ -40,4 +40,9 @@ ipfs.on('ready', async () => {
   const value = db.get('01')
   console.log(value)
 
+  db.events.on('replicated', () => {
+    const value = db.get('01')
+    console.log(value)
+  })
+
 })
