@@ -27,7 +27,7 @@ ipfs.on('ready', async () => {
     create: true,
     overwrite: true,
     localOnly: false,
-    write: ['*'], // ALLOW ALL TO WRITE
+    //write: ['*'], // ALLOW ALL TO WRITE
   })
 
   await db.load()
