@@ -23,11 +23,10 @@ ipfs.on('ready', async () => {
 
   const orbitdb = new OrbitDB(ipfs)
 
-  const db = await orbitdb.open('ajdb', {
+  const db = await orbitdb.docs('trainingdata', {
     create: true,
     overwrite: true,
     localOnly: false,
-    type: 'docs',
     write: ['*'],
   })
 
