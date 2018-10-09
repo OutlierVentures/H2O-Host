@@ -27,7 +27,7 @@ ipfs.on('ready', async () => {
     create: true,
     overwrite: true,
     localOnly: false,
-    //write: ['*'], // ALLOW ALL TO WRITE
+    write: ['*'], // ALLOW ALL WRITE, read not yet in OrbitDB
   })
 
   await db.load()
@@ -41,8 +41,12 @@ ipfs.on('ready', async () => {
   console.log(value)
 
   db.events.on('replicated', () => {
+
     const value = db.get('01')
     console.log(value)
+    orbitdb.disconnect()
+    ipfs.stop(() => {})
+
   })
 
 })
