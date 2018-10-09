@@ -32,21 +32,10 @@ ipfs.on('ready', async () => {
 
   await db.load()
 
+  console.log('Put this in your config file:')
   console.log(db.address.toString())
 
-  // In future: for entries in json db.put entry
-  await db.put({ _id: '01', val: 10 })
-
-  const value = db.get('01')
-  console.log(value)
-
-  db.events.on('replicated', () => {
-
-    const value = db.get('01')
-    console.log(value)
-    orbitdb.disconnect()
-    ipfs.stop(() => {})
-
-  })
+  //TODO: for entries in json db.put entry
+  //await db.put({ _id: '01', val: 10 })
 
 })
