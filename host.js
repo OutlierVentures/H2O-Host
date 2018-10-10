@@ -41,6 +41,9 @@ ipfs.on('ready', async () => {
   await db.put( { _id: 'y', array: data.y })
   await db.put( { _id: 't', array: data.truth })
 
-  console.log(db.query((doc) => doc))
+  /*
+  orbitdb.disconnect()
+  ipfs.stop(() => {})
+  */
 
 })
