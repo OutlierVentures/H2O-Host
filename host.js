@@ -1,3 +1,4 @@
+const data = require('./data/data.json')
 const IPFS = require('ipfs')
 const OrbitDB = require('orbit-db')
 
@@ -14,6 +15,8 @@ const ipfsOptions = {
     },
   }
 }
+
+console.log(data.truth);
 
 const ipfs = new IPFS(ipfsOptions)
 
@@ -35,7 +38,11 @@ ipfs.on('ready', async () => {
   console.log('Put this in your config file:')
   console.log(db.address.toString())
 
-  //TODO: for entries in json db.put entry
-  //await db.put({ _id: '01', val: 10 })
+  // async forEach withon the IPFS on ready is problematic, just put manually
+  await db.put( { _id: 'x', array: data.x })
+  await db.put( { _id: 'y', array: data.y })
+  await db.put( { _id: 't', array: data.truth })
+
+  console.log(db.query((doc) => doc))
 
 })
