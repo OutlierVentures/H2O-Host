@@ -1,3 +1,8 @@
+'''
+Sample Python script for generating clusterable data and writing to JSON.
+To change the dataset, modify the parameters of make_blobs.
+'''
+
 import sklearn.datasets.samples_generator as gen
 import json
 
@@ -6,12 +11,12 @@ data, truth = gen.make_blobs(n_samples = 20,
                              cluster_std = 0.50,
                              random_state = 0)
 
-x_1 = [i[0] for i in data]
-x_2 = [i[1] for i in data]
+x = [i[0] for i in data]
+y = [i[1] for i in data]
 
 struct = {
-    'x': x_1,
-    'y': x_2,
+    'x': x,
+    'y': y,
     'truth': truth.tolist()
 }
 
