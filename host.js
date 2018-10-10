@@ -16,8 +16,6 @@ const ipfsOptions = {
   }
 }
 
-console.log(data.truth);
-
 const ipfs = new IPFS(ipfsOptions)
 
 ipfs.on('error', (e) => console.error(e))
