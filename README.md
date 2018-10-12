@@ -12,6 +12,12 @@ If you want to try different datasets, there is a framework Python script in the
 
 ### Run
 
+Install dependencies:
+```
+npm install
+```
+
+Run:
 ```
 node host
 ```
