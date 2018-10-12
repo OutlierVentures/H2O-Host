@@ -36,14 +36,11 @@ ipfs.on('ready', async () => {
   console.log('Put this in your config file:')
   console.log(db.address.toString())
 
-  // async forEach withon the IPFS on ready is problematic, just put manually
+  // async forEach withon the IPFS on ready is problematic, put manually
   await db.put( { _id: 'x', array: data.x })
   await db.put( { _id: 'y', array: data.y })
   await db.put( { _id: 't', array: data.truth })
 
-  /*
-  orbitdb.disconnect()
-  ipfs.stop(() => {})
-  */
+  // Do not close connection to remain a host
 
 })
