@@ -7,6 +7,4 @@ If you want to try different datasets, there is a framework Python script in the
 
 ### Roadmap
 
-1. Stabilise closing of IPFS/OrbitDB connection
-2. Implement read-only replication
-3. Make vertical/horizontal arrays consistent in data
+1. Read-only database replication
