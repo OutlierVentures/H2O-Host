@@ -28,7 +28,7 @@ ipfs.on('ready', async () => {
     create: true,
     overwrite: true,
     localOnly: false,
-    write: ['*'], // ALLOW ALL WRITE, read not yet in OrbitDB
+    write: ['*'], // ALLOW ALL WRITE
   })
 
   await db.load()
@@ -39,7 +39,7 @@ ipfs.on('ready', async () => {
   // async forEach withon the IPFS on ready is problematic, put manually
   await db.put( { _id: 'x', array: data.x })
   await db.put( { _id: 'y', array: data.y })
-  await db.put( { _id: 't', array: data.truth })
+  await db.put( { _id: 't', array: data.t })
 
   // Do not close connection to remain a host
 
