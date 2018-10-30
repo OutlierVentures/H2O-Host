@@ -9,9 +9,10 @@ import json
 
 
 num_points = randint(20, 100)
+num_clusters = randint(2, 6)
 
 data, truth = gen.make_blobs(n_samples = num_points,
-                             centers = 4,
+                             centers = num_clusters,
                              cluster_std = 0.50,
                              random_state = 0)
 
