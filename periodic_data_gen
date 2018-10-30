@@ -8,6 +8,8 @@ echo "
 
 "
 
-command="pkill node host && python3 data.py && node host"
-job="* * * * * $command"
-cat <(fgrep -i -v "$command" <(crontab -l)) <(echo "$job") | crontab -
+while [ true ]
+do
+    pkill node host
+    python3 data.py && node host && sleep 600
+done
