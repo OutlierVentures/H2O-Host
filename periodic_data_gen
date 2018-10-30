@@ -11,5 +11,5 @@ echo "
 while [ true ]
 do
     pkill "node host"
-    python3 data.py && timeout 10m node host
+    python3 data.py && timeout 15s node host
 done
