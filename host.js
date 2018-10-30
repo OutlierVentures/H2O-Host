@@ -1,4 +1,4 @@
-const data = require('./data/data.json')
+const data = require('data.json')
 const IPFS = require('ipfs')
 const OrbitDB = require('orbit-db')
 
