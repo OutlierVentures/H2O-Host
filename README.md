@@ -6,7 +6,7 @@ Provider of the OrbitDB database for H2O.
 ### Requirements
 
 - Node 8
-- For periodic data generation (i.e. sample data for testing): Python 3 with SKLearn module & crontab
+- For periodic data generation (i.e. sample data for testing): Linux, Python 3 + SKLearn
 
 
 ### Run
@@ -16,11 +16,12 @@ Install dependencies:
 npm install
 ```
 
-#### Using sample data for testing
+#### Hosting sample data for testing (Linux only)
 
 ```
 ./periodic_data_gen
 ```
+
 
 #### Using your own dataset
 
