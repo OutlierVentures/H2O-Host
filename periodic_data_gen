@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "
+ _  _ ___ ___    _  _  ___  ___ _____
+| || |_  ) _ \  | || |/ _ \/ __|_   _|
+| __ |/ / (_) | | __ | (_) \__ \ | |
+|_||_/___\___/  |_||_|\___/|___/ |_|
+
+"
+
+command="pkill node host && python3 data.py && node host"
+job="* * * * * $command"
+cat <(fgrep -i -v "$command" <(crontab -l)) <(echo "$job") | crontab -
