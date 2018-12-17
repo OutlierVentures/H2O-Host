@@ -30,13 +30,18 @@ Using our example:
 cd uber_example
 node host
 ```
+If you get a 'No OrbitDB database found' message in H2O, comment out the
 
 Generating a new sample of pickup data and hosting it:
 ```
 cd uber_example
-chmod +x host
-./host
+pip3 install wheel pandas matplotlib subsample
+npm install orbit-db ipfs
+subsample -n [YOUR_NUMBER_OF_SAMPLES] uber.csv > uber_sample.csv
+python3 uber.py
+node host
 ```
+200 generally works well for this dataset but feel free to experiment - there be dragons.
 
 #### Using your own dataset
 
