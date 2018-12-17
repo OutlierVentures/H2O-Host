@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pip3 install pandas matplotlib subsample
+npm install orbit-db ipfs
+subsample -n 200 uber.csv > uber_sample.csv
+python3 uber.py
+node host.js

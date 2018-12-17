@@ -1,5 +1,6 @@
-node_modules
-orbitdb
-package-lock.json
+**/node_modules
+**/orbitdb
+**/package-lock.json
 config.json
 .DS_store
+.vscode

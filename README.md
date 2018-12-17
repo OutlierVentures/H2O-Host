@@ -7,6 +7,7 @@ Provider of the OrbitDB database for H2O.
 
 - Node 8
 - For periodic data generation (i.e. sample data for testing): Linux, Python 3 + SKLearn
+- For Uber example: Python3, pip3, npm
 
 
 ### Run
@@ -22,6 +23,20 @@ npm install
 ./periodic_data_gen
 ```
 
+#### Hosting the Uber example data
+
+Using our example:
+```
+cd uber_example
+node host
+```
+
+Generating a new sample of pickup data and hosting it:
+```
+cd uber_example
+chmod +x host
+./host
+```
 
 #### Using your own dataset
 
@@ -37,7 +52,3 @@ The `t` field is ground truth, i.e. the clusters. This is optional, simply remov
 
 *Advanced:* if you're familiar with SKLearn, any dataset that can be clustered with `sklearn.kmeans` will work as long as it is in JSON format.
 
-
-### Roadmap
-
-1. Read-only database replication
