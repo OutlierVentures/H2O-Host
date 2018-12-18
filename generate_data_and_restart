@@ -8,8 +8,19 @@ echo "
 
 "
 
+# Change dir to the script location so that it can be called from any path,
+# e.g. from cron.
 cd `dirname $0`
+
+# Generate random data
 python3 data.py
+
+# Kill previous running node process. Node this could have wider impact - it will
+# kill all processes with this name.
 pkill "node host"
+
+# Delete OrbitDB data so H2O-Host will load only the newly generated data.
 rm -rf orbitdb
+
+# Start H2O-Host
 timeout 15s node host
