@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "
+ _  _ ___ ___    _  _  ___  ___ _____
+| || |_  ) _ \  | || |/ _ \/ __|_   _|
+| __ |/ / (_) | | __ | (_) \__ \ | |
+|_||_/___\___/  |_||_|\___/|___/ |_|
+
+"
+
+cd `dirname $0`
+python3 data.py
+pkill "node host"
+rm -rf orbitdb
+timeout 15s node host
